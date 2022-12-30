@@ -1,13 +1,5 @@
 ﻿#pragma once
 
-RECT firstNodePos = { 350, 225, 400, 275 }; // vị trí của node đầu tiên trong dequeue
-RECT secondNodePos = { 450, 225, 500, 275 }; // vị trí của node thứ hai trong dequeue
-RECT frontPos = { 180, 225, 230, 275 }; // vị trí node dừng lại khi thực hiện popfront/ vị trí node bắt đầu di chuyển khi thực hiện pushfront
-RECT backPos = { 820, 225, 870, 275 }; // vị trí node dừng lại khi thực hiện popback/ vị trí node bắt đầu di chuyển khi thực hiện pushback
-int sleepTime = 100;
-int maxCap = 4; // số node tối đa của dequeue
-
-// dựng dequeue
 struct NODE {
     string data;
     NODE* next;
@@ -97,9 +89,3 @@ struct DEQUEUE {
     }
 };
 
-void drawDequeueFrame()
-{
-    setcolor(15);
-    line(300, 200, 750, 200);
-    line(300, 300, 750, 300);
-}

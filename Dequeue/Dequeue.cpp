@@ -9,6 +9,7 @@
 #include <algorithm>
 using namespace std;
 
+void drawDequeueFrame();
 void drawWelcomeInterface();
 void dequeueSimulation();
 void drawPushBack(string data);
@@ -18,6 +19,12 @@ void drawPopBack(int x1, int y1, int x2, int y2, string prevRearNode);
 void drawObjectsInDequeue(RECT pos);
 
 DEQUEUE* dq = new DEQUEUE();
+RECT firstNodePos = { 350, 225, 400, 275 }; // vị trí của node đầu tiên trong dequeue
+RECT secondNodePos = { 450, 225, 500, 275 }; // vị trí của node thứ hai trong dequeue
+RECT frontPos = { 180, 225, 230, 275 }; // vị trí node dừng lại khi thực hiện popfront/ vị trí node bắt đầu di chuyển khi thực hiện pushfront
+RECT backPos = { 820, 225, 870, 275 }; // vị trí node dừng lại khi thực hiện popback/ vị trí node bắt đầu di chuyển khi thực hiện pushback
+int sleepTime = 100;
+int maxCap = 4; // số node tối đa của dequeue
 
 int main()
 {
@@ -32,6 +39,14 @@ int main()
 
     return 0;
 }
+
+// vẽ khung
+void drawDequeueFrame()
+{
+    setcolor(15);
+    line(300, 200, 750, 200);
+    line(300, 300, 750, 300);
+} 
 
 // Vẽ giao diện bắt đầu
 void drawWelcomeInterface()
